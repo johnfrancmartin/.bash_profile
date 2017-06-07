@@ -37,7 +37,7 @@ git_branch () {
 
 # Set a specific color for the status of the Git repo
 git_color() {
-    local STATUS=`git status 2>&1`
+    local STATUS='git status 2>&1'
     if [[ "$STATUS" == *'Not a git repository'* ]]
         then echo "" # nothing
     else
