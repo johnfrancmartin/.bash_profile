@@ -41,14 +41,12 @@ git_color() {
     if [[ "$STATUS" == *'Not a git repository'* ]]
         then echo "" # nothing
     else
-        if [[ "$STATUS" != *'working tree clean'* ]]
-            then echo -e $REDT # red if need to commit
-        else
-            if [[ "$STATUS" == *'Your branch is ahead'* ]]
+        if [[ "$STATUS" == *'Working tree clean'* ]]
+            then echo -e $GREENT # red if need to commit
+        elif [[ "$STATUS" == *'Your branch is ahead'* ]]
                 then echo -e $YELLOWT # yellow if need to push
-            else
-                echo -e $GREENT # else green
-            fi
+        else
+            echo -e $REDT # else green
         fi
     fi
 }

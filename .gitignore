@@ -11,11 +11,13 @@
 .dbeaver4/
 .dbvis/
 .eclipse/
+.gitconfig
 .node-gyp/
 .npm/
 .oracle_jre_usage/
 .ports.json
 .swt/
+.viminfo
 Applications (Parallels)/
 Applications/
 Desktop/
