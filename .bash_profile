@@ -13,14 +13,22 @@ GREENT="\[\033[0;32m\]"
 GREENB="\[\033[1;32m\]"
 BLUET="\[\033[0;34m\]"
 BLUEB="\[\033[1;34m\]"
-YELLOWT="\[\033[0;33m\]"
-YELLOWB="\[\033[1;33m\]"
+YELLOWT="\[\033[38;5;011m\]"
+YELLOWB="\[\033[48;5;011m\]"
 ORANGET="\[\033[38;5;208m\]"
 ORANGEB="\[\033[48;5;208m\]"
 PURPLET="\[\033[0;35m\]"
 PURPLEB="\[\033[1;35m\]"
 CYANT="\[\033[0;36m\]"
 CYANB="\[\033[1;36m\]"
+
+#-----------------------------------------------------------------------------------
+# Alis Setup
+#-----------
+
+alias ls='ls -GFh'
+
+alias gits='git status'
 
 #-----------------------------------------------------------------------------------
 # Function Setup
@@ -37,13 +45,12 @@ git_branch () {
 
 # Set a specific color for the status of the Git repo
 git_color() {
-    local STATUS='git status 2>&1'
-    if [[ "$STATUS" == *'Not a git repository'* ]]
+    if [[ $(gits) == *'Not a git repository'* ]]
         then echo "" # nothing
     else
-        if [[ "$STATUS" == *'working tree clean'* ]]
+        if [[ $(gits) == *'working tree clean'* ]]
             then echo -e $GREENT # red if need to commit
-        elif [[ "$STATUS" == *'Your branch is ahead'* ]]
+        elif [[ $(gits) == *'Your branch is ahead'* ]]
                 then echo -e $YELLOWT # yellow if need to push
         else
             echo -e $REDT # else green
@@ -56,9 +63,7 @@ git_color() {
 export PS1="$PURPLET\h: 🍵  $ORANGET\W $WHITET[$(git_color)$(git_branch)$WHITET] \$ $BLACKT"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
-alias ls='ls -GFh'
 
-alias gits='git status'
 
 docs(){
   cd /Users/John.Franc.Martin@ibm.com/Documents
