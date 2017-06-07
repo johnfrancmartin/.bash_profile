@@ -1,0 +1,33 @@
+.CFUserTextEncoding
+.Trash/
+.anyconnect
+.apiconnect/
+.atom/
+.bash_history
+.bash_sessions/
+.cf/
+.cisco/
+.dbeaver-drivers/
+.dbeaver4/
+.dbvis/
+.eclipse/
+.node-gyp/
+.npm/
+.oracle_jre_usage/
+.ports.json
+.swt/
+Applications (Parallels)/
+Applications/
+Desktop/
+Documents/
+Downloads/
+Library/
+Movies/
+Music/
+Parallels/
+Pictures/
+Public/
+PycharmProjects/
+iCloud Drive (Archive)/
+stkeystore.p12
+test-api-postgre/
